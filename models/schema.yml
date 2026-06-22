@@ -25,6 +25,15 @@ models:
             tests:
                 - not_null
                 - unique
+    - name: stg_sales_order_items
+      columns:
+          - name: sales_order_number
+            tests:
+                - not_null
+          - name: item_number
+            tests:
+                - not_null
+          
                
                 
                 
