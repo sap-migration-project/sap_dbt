@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_sap
+    database: SAP_DW
+    schema: RAW_SAP
+
+    tables:
+      - name: VBAK
+      - name: VBAP
+      - name: KNA1
+      - name: LFA1
+      - name: BKPF
+      - name: BSEG
+      - name: EKKO
+      - name: EKPO
