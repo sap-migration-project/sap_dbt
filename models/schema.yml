@@ -63,6 +63,30 @@ models:
           - name: vendor_number
           
           - name: material_number
+    - name: stg_accounting_documents
+      description: Accounting Document Header And line Item Details
+      columns: 
+          - name: accounting_document_number
+            tests:
+               - not_null
+
+          - name: fiscal_year
+            tests:
+               - not_null
+
+          - name : line_item_number
+            tests:
+               - not_null
+
+          - name: company_code
+            tests:
+               - not_null
+              
+              
+
+              
+              
+              
 
               
                          
