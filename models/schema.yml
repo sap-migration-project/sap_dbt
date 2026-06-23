@@ -3,6 +3,7 @@ version: 2
 models:
     - name: my_first_dbt_model
       description: "A starter dbt model"
+      
       columns:
           - name: id
             description: "The primary key for this table"
@@ -12,6 +13,7 @@ models:
 
     - name: my_second_dbt_model
       description: "A starter dbt model"
+
       columns:
           - name: id
             description: "The primary key for this table"
@@ -21,6 +23,7 @@ models:
 
     - name: stg_customers
       description: Customers staging created from raw KNA1
+
       columns:
         - name: customer_number
           tests:
@@ -32,6 +35,7 @@ models:
                 
             
     - name: stg_sales_orders
+
       columns:
           - name: sales_order_number
             tests:
@@ -39,6 +43,7 @@ models:
                 - unique
 
     - name: stg_sales_order_items
+
       columns:
           - name: sales_order_number
             tests:
@@ -59,6 +64,7 @@ models:
 
     - name: stg_purchase_order_items
       description: Purchase OrderItems Enriched With Header and Vendor Details
+
       columns:
           - name: purchase_order_number
             tests:
@@ -78,6 +84,7 @@ models:
           
     - name: stg_accounting_documents
       description: Accounting Document Header And line Item Details
+
       columns: 
           - name: accounting_document_number
             tests:
@@ -97,6 +104,7 @@ models:
 
     - name: int_sales_orders
       description: Sales Orders Enriched With Item details
+
       columns:
         - name: sales_order_number
           tests:
@@ -107,8 +115,10 @@ models:
         - name: customer_number
           tests:
              - not_null
+
     - name: fct_sales
       description: fact table cointaing sales ordr line level transactions
+
       columns:
         - name: sales_order_number
           tests:
@@ -122,6 +132,7 @@ models:
         - name: sales_amount
           tests:
                - not_null
+
     - name: dim_customers
       description: Customer Dimention
 
