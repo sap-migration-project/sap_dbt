@@ -95,7 +95,25 @@ models:
         - name: customer_number
           tests:
              - not_null
-
+    - name: fct_sales
+      description: fact table cointaing sales ordr line level transactions
+      columns:
+        - name: sales_order_number
+          tests:
+             - not_null
+        - name: item_number
+          tests:
+             - not_null
+        - name: customer_number
+          tests:
+             - not_null
+        - name: sales_amount
+          tests:
+              - not_null
+              
+            
+            
+            
             
 
             
