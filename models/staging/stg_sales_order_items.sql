@@ -4,7 +4,7 @@ select
     VBAP.vbeln          as sales_order_number,
     VBAP.posnr          as item_number,
     VBAP.matnr          as material_number,
-    VBAP.arktx          as material_discription,
+    VBAP.arktx          as material_description,
     VBAP.kwmeng         as order_quantity,
     VBAP.netpr          as item_price,
     VBAK.erdat          as order_date,
