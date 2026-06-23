@@ -144,6 +144,19 @@ models:
         - name: customer_name
           tests:
               - not_null
+
+    - name: dim_products
+      description: Product dimension
+
+      columns:
+        - name: material_number
+          tests:
+             - not_null
+             - unique
+
+        - name: material_description
+             
+            
             
               
               
