@@ -81,6 +81,25 @@ models:
           - name: company_code
             tests:
                - not_null
+               
+    - name: int_sales_orders
+      description: Sales Orders Enriched With Item details
+      columns:
+        - name: sales_order_number
+          tests:
+              - not_null
+        - name: item_number
+          tests:
+             - not_null
+        - name: customer_number
+          tests:
+             - not_null
+            
+
+            
+              
+            
+            
               
               
 
