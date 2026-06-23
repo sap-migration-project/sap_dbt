@@ -63,6 +63,7 @@ models:
           - name: vendor_number
           
           - name: material_number
+          
     - name: stg_accounting_documents
       description: Accounting Document Header And line Item Details
       columns: 
