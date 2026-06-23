@@ -18,7 +18,19 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: stg_customers
+      description: Customers staging created from raw KNA1
+      columns:
+        - name: customer_number
+          tests:
+             - not_null
+             - unique
+        - name: customer_name
+          tests:
+             - not_null
                 
+            
     - name: stg_sales_orders
       columns:
           - name: sales_order_number
