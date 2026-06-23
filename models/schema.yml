@@ -33,7 +33,19 @@ models:
           - name: item_number
             tests:
                 - not_null
-          
+    - name: stg_purchase_orders
+      columns:
+          - name: purchase_order_number
+            tests:
+               - not_null
+               - unique
+          - name: vendor_number
+            tests:
+                - not_null
+              
+               
+              
+              
                
                 
                 
