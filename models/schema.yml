@@ -25,6 +25,7 @@ models:
             tests:
                 - not_null
                 - unique
+
     - name: stg_sales_order_items
       columns:
           - name: sales_order_number
@@ -33,6 +34,7 @@ models:
           - name: item_number
             tests:
                 - not_null
+
     - name: stg_purchase_orders
       columns:
           - name: purchase_order_number
@@ -42,6 +44,29 @@ models:
           - name: vendor_number
             tests:
                 - not_null
+
+    - name: stg_purchase_order_items
+      description: Purchase OrderItems Enriched With Header and Vendor Details
+      columns:
+          - name: purchase_order_number
+            tests:
+                - not_null
+
+          - name: item_number
+            tests:
+                - not_null
+
+          - name: vendor_number
+            tests:
+               - not_null
+
+          - name: vendor_number
+          
+          - name: material_number
+
+              
+                         
+    
               
                
               

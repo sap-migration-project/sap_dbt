@@ -5,7 +5,7 @@ select
     EKKO.bukrs              as company_code,
     EKKO.bsart              as po_type,
     EKKO.bedat              as po_date,
-    EKKO.ekorg              as purchaseing_org,
+    EKKO.ekorg              as purchasing_org,
     EKKO.ekgrp              as purchasing_group,
     EKKO.waers              as currency,
 
