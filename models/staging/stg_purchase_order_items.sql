@@ -3,7 +3,6 @@
 SELECT
 --Purchase Order Head EKKO PO ITEMS
     EKKO.mandt          as mandt,
-    EKKO.ebeln          as purchase_order_number,
     EKKO.bukrs          as company_code,
     EKKO.bsart          as po_type,
     EKKO.bedat          as po_date,
@@ -15,6 +14,7 @@ SELECT
     LFA1.ort01          as vendor_city,
     LFA1.land1          as vendor_country,
 --purchase order items
+    EKPO.ebeln          as purchase_order_number,
     EKPO.ebelp          as item_number,
     EKPO.matnr          as material_number,
     EKPO.txz01          as material_discription,
