@@ -3,7 +3,7 @@
         materialized='incremental',
         unique_key=['mandt','purchase_order_number','item_number'],
         incremental_strategy= 'merge',
-        on_schema_change='apend_new_columns'
+        on_schema_change='append_new_columns'
     )
 }}
 
@@ -12,7 +12,7 @@ select
     spoi.purchase_order_number,
     spoi.item_number,
     spoi.material_number,
-    spoi.material_discription as material_discription,
+    spoi.material_discription as material_description,
     spoi.plant,
     spoi.quantity,
     spoi.unit_of_measure,
