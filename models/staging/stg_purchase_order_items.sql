@@ -2,14 +2,13 @@
 
 SELECT
 --Purchase Order Head EKKO PO ITEMS
-
+    EKKO.mandt          as mandt,
     EKKO.ebeln          as purchase_order_number,
     EKKO.bukrs          as company_code,
     EKKO.bsart          as po_type,
     EKKO.bedat          as po_date,
     EKKO.ekorg          as purchasing_org,
     EKKO.ekgrp          as purchasing_group,
-
 -- Vendor --LFA1  VENDOR MASTER
     LFA1.lifnr          as vendor_number,
     LFA1.name1          as vendor_name,
