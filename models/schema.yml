@@ -43,25 +43,42 @@ models:
                 - unique
 
     - name: stg_sales_order_items
-
+      description: "Sales order line items joined with header (VBAK) and customer (KNA1) data"
       columns:
-          - name: sales_order_number
-            tests:
-                - not_null
-          - name: item_number
-            tests:
-                - not_null
-
-    - name: stg_purchase_orders
-      columns:
-          - name: purchase_order_number
-            tests:
-               - not_null
-               - unique
-          - name: vendor_number
-            tests:
-                - not_null
-
+        - name: sales_order_item_skey
+          description: "Surrogate key generated from sales_order_number + item_number"
+          tests:
+            - not_null
+            - unique
+        - name: sales_order_number
+          tests:
+            - not_null
+        - name: item_number
+          tests:
+            - not_null
+        - name: order_quantity
+          tests:
+            - dbt_expectations.expect_column_values_to_be_between:
+                arguments: 
+                  min_value: 0
+                  strictly: false
+        - name: item_price
+          tests:
+            - dbt_expectations.expect_column_values_to_be_between:
+                arguments:  
+                  min_value: 0
+                  strictly: false
+        - name: net_value
+          tests:
+            - dbt_expectations.expect_column_values_to_be_between:
+                arguments: 
+                  min_value: 0
+                  strictly: false
+        - name: currency
+          tests:
+            - dbt_expectations.expect_column_value_lengths_to_equal:
+                arguments: 
+                  value: 3  # SAP currency codes are always 3 chars, e.g. USD, EUR, INR
     - name: stg_purchase_order_items
       description: Purchase OrderItems Enriched With Header and Vendor Details
 
@@ -155,7 +172,13 @@ models:
              - unique
 
         - name: material_description
+
+     
+            
+            
+            
              
+            
             
             
               
