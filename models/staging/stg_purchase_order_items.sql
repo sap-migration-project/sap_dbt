@@ -15,7 +15,7 @@ SELECT
     LFA1.ort01          as vendor_city,
     LFA1.land1          as vendor_country,
 --purchase order items
-    EKPO.ebeln          as item_number,
+    EKPO.ebelp          as item_number,
     EKPO.matnr          as material_number,
     EKPO.txz01          as material_discription,
     EKPO.werks          as plant,
@@ -28,7 +28,7 @@ SELECT
 
 from {{ source('raw_sap', 'EKPO') }} EKPO
 
-left join {{ source('raw_sap' , 'EKKO') }} EKKO
+inner join {{ source('raw_sap' , 'EKKO') }} EKKO
     on  EKPO.mandt   =   EKKO.mandt
     and EKPO.ebeln   =   EKKO.ebeln
 
