@@ -2,15 +2,18 @@ version: 2
 
 sources:
   - name: raw_sap
-    database: SAP_DW
-    schema: RAW_SAP
-
+    database: DBT_DB
+    schema: DBT_SC
     tables:
-      - name: VBAK
-      - name: VBAP
-      - name: KNA1
-      - name: LFA1
+      - name: EKKO
+        freshness:
+          loaded_at_field: bedat
+          warn_after: {count: 30, period: day}
+          error_after: {count: 60, period: day}
+      - name: EKPO
       - name: BKPF
       - name: BSEG
-      - name: EKKO
-      - name: EKPO
+      - name: KNA1
+      - name: LFA1
+      - name: VBAK
+      - name: VBAP
