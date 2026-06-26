@@ -2,14 +2,15 @@ version: 2
 
 sources:
   - name: raw_sap
-    database: DBT_DB
-    schema: DBT_SC
+    database: SAP_DW
+    schema: RAW_SAP
+    config:
+      freshness:
+        loaded_at_field: bedat
+        warn_after: {count: 30, period: day}
+        error_after: {count: 60, period: day}
     tables:
       - name: EKKO
-        freshness:
-          loaded_at_field: bedat
-          warn_after: {count: 30, period: day}
-          error_after: {count: 60, period: day}
       - name: EKPO
       - name: BKPF
       - name: BSEG
