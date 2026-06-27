@@ -6,6 +6,8 @@
       unique_key='vendor_number',
       strategy='check',
       check_cols=['vendor_name', 'city', 'country'],
+      pre_hook="INSERT INTO DBT_DB.DBT_SC.SNAPSHOT_RUN_LOG (snapshot_name, run_started_at, invocation_id) VALUES ('dim_vendor_scd2', CURRENT_TIMESTAMP(), '" ~ invocation_id ~ "')",
+      post_hook="INSERT INTO DBT_DB.DBT_SC.SNAPSHOT_RUN_LOG (snapshot_name, run_started_at, invocation_id) VALUES ('dim_vendor_scd2_completed', CURRENT_TIMESTAMP(), '" ~ invocation_id ~ "')",
     )
 }}
 
